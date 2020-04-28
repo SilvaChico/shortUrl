@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+  <title>Document</title>
+</head>
+<body>
+<div class="jumbotron vertical-center">
+  <div class="container-sm">
+    <h1 class="text-center">URL Shrinker</h1>
+    <form action="/shortUrls" method="POST" class="my-4 form-inline">
+      <label for="fullUrl" class="sr-only">Url</label>
+      <input required placeholder="Url" type="url" name="fullUrl" id="fullUrl" class="form-control col mr-2">
+      <button class="btn btn-primary" type="submit">Shrink</button>
+    </form>
+    <% if (typeof shortUrl!== 'undefined'){ %>
+        <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Your short URL has been created !</h4>
+        <p>New Short URL : <a href="<%= shortUrl.short %>"><%=baseURL%>/<%=shortUrl.short %></a></p>
+        <!--hr>
+        <p class="mb-0">Check the number of clicks on: kasdkjsabdb</p>
+        </hr-->
+        </div>
+        <% } %>
+  </div>
+</div>
+</body>
+</html>
