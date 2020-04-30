@@ -10,9 +10,11 @@
   <title>Document</title>
 </head>
 <body>
-<div class="jumbotron vertical-center">
-  <div class="container-sm">
-    <h1 class="text-center">URL Shrinker</h1>
+  <div class="container">
+<div class="row h-100">
+  <div class="col-sm-10 my-auto mx-auto">
+    <div class="jumbotron">
+    <h1 class="text-center">URL Shortner</h1>
     <form action="/shortUrls" method="POST" class="my-4 form-inline">
       <label for="fullUrl" class="sr-only">Url</label>
       <input required placeholder="Url" type="url" name="fullUrl" id="fullUrl" class="form-control col mr-2">
@@ -22,12 +24,14 @@
         <div class="alert alert-success" role="alert">
         <h4 class="alert-heading">Your short URL has been created !</h4>
         <p>New Short URL : <a href="<%= shortUrl.short %>"><%=baseURL%>/<%=shortUrl.short %></a></p>
-        <!--hr>
-        <p class="mb-0">Check the number of clicks on: kasdkjsabdb</p>
+        <!--hr> TO BE IMPLEMENTED
+        <p class="mb-0">Check the number of clicks on: URL</p>
         </hr-->
         </div>
         <% } %>
   </div>
+</div>
+</div>
 </div>
 </body>
 </html>

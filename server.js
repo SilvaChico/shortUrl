@@ -9,15 +9,13 @@ const baseURL = config.get('baseURL');
 //connnect to DB
 connectDB();
 
-
 app.set('view engine', 'ejs')
 
 app.use(express.static('public'))
 
 app.use(express.urlencoded({ extended: false })) 
 
-app.get('/', async (req, res) => {
-  const shortUrls = await ShortUrl.find()
+app.get('/',  (req, res) => {
   res.render('index')
 })
 
@@ -29,9 +27,10 @@ app.get('/allUrls', async (req, res) => {
 app.post('/shortUrls', async (req, res) => {
   const curFull = { full: req.body.fullUrl }
   await ShortUrl.create(curFull)
-  //res.redirect('/')
   const shortUrl = await ShortUrl.findOne(curFull)
-  res.render('index', { shortUrl: shortUrl,
+  //res.redirect('/')
+  res.render('index', { 
+    shortUrl: shortUrl,
   baseURL: baseURL})
 })
 

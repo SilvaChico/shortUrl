@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "http://SilvaChico.github.io/shortUrl",
   "scripts": {
-    "devStart": "nodemon server.js"
+    "devStart": "nodemon server.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +19,7 @@
     "shortid": "^2.2.15"
   },
   "devDependencies": {
+    "gh-pages": "^2.2.0",
     "nodemon": "^2.0.3"
   }
 }
