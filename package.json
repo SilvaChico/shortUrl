@@ -6,8 +6,7 @@
   "homepage": "http://SilvaChico.github.io/shortUrl",
   "scripts": {
     "devStart": "nodemon server.js",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",

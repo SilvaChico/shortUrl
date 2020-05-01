@@ -19,6 +19,7 @@ app.get('/',  (req, res) => {
   res.render('index')
 })
 
+//Page to check all url's and number of clicks
 app.get('/allUrls', async (req, res) => {
   const shortUrls = await ShortUrl.find()
   res.render('allUrls', { shortUrls: shortUrls })
@@ -31,9 +32,8 @@ app.post('/shortUrls', async (req, res) => {
   //res.redirect('/')
   res.render('index', { 
     shortUrl: shortUrl,
-  baseURL: baseURL})
+    baseURL: baseURL})
 })
-
 
 app.get('/:shortUrl', async (req, res) => {
   const shortUrl = await ShortUrl.findOne({ short: req.params.shortUrl })
@@ -45,4 +45,4 @@ app.get('/:shortUrl', async (req, res) => {
   res.redirect(shortUrl.full)
 })
 
-app.listen(process.env.PORT || 5000);
+app.listen(process.env.PORT || 5000,() => console.log(`Server running on port ${PORT}`));
