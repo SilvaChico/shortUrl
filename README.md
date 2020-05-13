@@ -14,3 +14,5 @@ npm install
 # Run
 npm start
 ```
+# Deployed with Heroku
+https://short-url-code-challenge.herokuapp.com
