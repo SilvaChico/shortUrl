@@ -4,7 +4,8 @@ const ShortUrl = require('./models/shortUrl');
 const app = express();
 const connectDB = require('./config/db');
 const config = require('config');
-const baseURL = config.get('baseURL');
+const PORT = process.env.PORT || 5000;
+
 
 //connnect to DB
 connectDB();
@@ -29,10 +30,13 @@ app.post('/shortUrls', async (req, res) => {
   const curFull = { full: req.body.fullUrl }
   await ShortUrl.create(curFull)
   const shortUrl = await ShortUrl.findOne(curFull)
-  //res.redirect('/')
+  const hostname = req.hostname || config.get('baseURL')
+  
+  //to implement html5 history to keep same URL
+
   res.render('index', { 
     shortUrl: shortUrl,
-    baseURL: baseURL})
+    baseURL:  hostname})
 })
 
 app.get('/:shortUrl', async (req, res) => {
@@ -45,6 +49,4 @@ app.get('/:shortUrl', async (req, res) => {
   res.redirect(shortUrl.full)
 })
 
-var PORT = process.env.PORT || 5000;
-
-app.listen(PORT ,() => console.log(`Server running on port ${PORT}`))
+app.listen(PORT,() => console.log(`Server running on port ${PORT}`));
