@@ -26,7 +26,7 @@ app.get('/allUrls', async (req, res) => {
   res.render('allUrls', { shortUrls: shortUrls })
 })
 
-app.post('/shortUrls', async (req, res) => {
+app.post('/createUrl', async (req, res) => {
   const curFull = { full: req.body.fullUrl }
   await ShortUrl.create(curFull)
   const shortUrl = await ShortUrl.findOne(curFull)
@@ -49,4 +49,6 @@ app.get('/:shortUrl', async (req, res) => {
   res.redirect(shortUrl.full)
 })
 
-app.listen(PORT,() => console.log(`Server running on port ${PORT}`));
+var server = app.listen(PORT,() => console.log(`Server running on port ${PORT}`));
+
+module.exports = server;
