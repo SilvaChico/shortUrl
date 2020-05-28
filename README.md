@@ -1,4 +1,4 @@
-# Runtime Revolution code challenge
+# Code challenge
 URL Shortener Service
 
 > API to create short urls using Node, Express and MongoDB
