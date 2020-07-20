@@ -27,7 +27,7 @@
     "type": "git",
     "url": "http://SilvaChico.github.io/shortUrl"
   },
-   "jest": {
+  "jest": {
     "testEnvironment": "node",
     "coveragePathIgnorePatterns": [
       "/node_modules/"
