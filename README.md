@@ -9,8 +9,6 @@ URL Shortener Service
 # Install dependencies
 npm install
 
-# Edit the default.json file with your mongoURI and baseUrl (ex:localhost:5000)
-
 # Run
 npm start
 ```
