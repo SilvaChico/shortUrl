@@ -12,15 +12,16 @@ app.set('view engine', 'ejs');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({ extended: false }));
 
 app.get('/', (req, res) => {
-    res.render('index')
+    res.render('index');
 })
 
 app.post('/shortUrl', async (req, res) => {
-    const shortUrl = await createShortUrl(req.body.fullUrl)
-    const hostname = req.hostname
+    const shortUrl = await createShortUrl(req.body.fullUrl);
+    const hostname = req.hostname;
+    console.log(shortUrl);
     res.render('index', {
         shortUrl: shortUrl,
         baseURL: hostname
@@ -32,6 +33,7 @@ app.get('/:shortUrl', async (req, res) => {
         const shortUrl = await getFullUrl(req.params.shortUrl)
         res.redirect(shortUrl);
     } catch (error) {
+        if (req.params.shortUrl === 'shortUrl') res.redirect('/');
         return res.sendStatus(404);
     }
 })
