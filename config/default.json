@@ -1,4 +1,4 @@
 {
-	"baseURL":"localhost:5000",
-	"mongoURI":""
+    "baseURL": "localhost:5000",
+    "mongoURI": "mongodb+srv://fcsilva:m9FKpHcPAoRn3qTQ@cluster0.fanze.mongodb.net/test?retryWrites=true&w=majority"
 }

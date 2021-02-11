@@ -1,8 +1,9 @@
-const mongoose = require('mongoose');
-const config = require('config');
-const db = config.get('mongoURI') || process.env.MONGODB_URI;
+import mongoose from 'mongoose';
+import config from 'config';
 
-const connectDB = async() => {
+const db: string = config.get('mongoURI') || process.env.MONGODB_URI;
+
+const connectDB = async () => {
     try {
         await mongoose.connect(db, {
             useNewUrlParser: true,
@@ -15,4 +16,4 @@ const connectDB = async() => {
     }
 }
 
-module.exports = connectDB;
+export = connectDB;
