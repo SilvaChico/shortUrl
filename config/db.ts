@@ -1,7 +1,8 @@
 import mongoose from 'mongoose';
-import config from 'config';
 
-const db: string = config.get('mongoURI') || process.env.MONGODB_URI;
+require('dotenv').config()
+
+const db: string = process.env.MONGODB_URI;
 
 const connectDB = async () => {
     try {

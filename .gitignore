@@ -1,3 +1,2 @@
 node_modules/**
-config/prod.json
-config/default.json
+.env

@@ -2,7 +2,6 @@ import express from 'express';
 import createShortUrl from './services/createShortUrl';
 import getFullUrl from './services/getFullUrl';
 import connectDB from '../config/db';
-import config from 'config';
 import path from 'path';
 const app = express();
 
@@ -21,7 +20,7 @@ app.get('/', (req, res) => {
 
 app.post('/createUrl', async (req, res) => {
     const shortUrl = await createShortUrl(req.body.fullUrl)
-    const hostname = req.hostname || config.get('baseURL')
+    const hostname = req.hostname
     res.render('index', {
         shortUrl: shortUrl,
         baseURL: hostname
