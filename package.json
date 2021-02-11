@@ -35,7 +35,7 @@
         "eslint": "^7.10.0",
         "nodemon": "^2.0.7",
         "sinon": "^9.1.0",
-        "ts-node-dev": "^1.0.0-pre.62",
+        "ts-node-dev": "^1.0.0-pre.62"
     },
     "repository": {
         "type": "git",
