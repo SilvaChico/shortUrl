@@ -7,7 +7,7 @@
     "scripts": {
         "dev": "nodemon src/server.ts",
         "start": "ts-node src/server.ts",
-        "test": "nodemon --exec 'mocha -r ts-node/register ./src/tests/*'"
+        "test": "mocha -r ts-node/register ./src/tests/*"
     },
     "author": "",
     "license": "ISC",

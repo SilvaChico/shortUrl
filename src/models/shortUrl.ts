@@ -7,7 +7,7 @@ interface IShortUrl extends Document {
     clicks: number;
 }
 
-export const shortUrlSchema = new Schema({
+const shortUrlSchema = new Schema({
     full: {
         type: String,
         required: true
