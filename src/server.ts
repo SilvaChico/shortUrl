@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
     res.render('index')
 })
 
-app.post('/createUrl', async (req, res) => {
+app.post('/shortUrl', async (req, res) => {
     const shortUrl = await createShortUrl(req.body.fullUrl)
     const hostname = req.hostname
     res.render('index', {
